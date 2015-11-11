@@ -1,0 +1,28 @@
+<div class="center">
+  <h1>Interactive</h1>
+  <p>
+    Hopefully you read up on the gruntfile, if not, get on it lazybones!! Our application uses a grunt plugin called <a href="https://www.npmjs.com/package/grunt-contrib-watch">grunt-contrib-watch.</a> This watches all of the files we have bacause I set it up that way! In the gruntfile on lines 24-38 you can see how it is set to watch all of the files pretty much everywhere. You also see that livereload is set to true.
+  </p>
+  <p>
+    If you already found it in the documentation <a href="https://www.npmjs.com/package/grunt-contrib-watch#enabling-live-reload-in-your-html">(Hint Hint)</a> then you know all you have to do is add this line <br> &#60script src="//localhost:35729/livereload.js">&#60/script> <br> to the index.html page located in the layouts folder
+  </p>
+
+  <p>
+    Once that is done click on the button
+  </p>
+  <button>click me</button>
+  <div class="center-two">
+    <p>
+      Congrats! You are now reloading live.<br>
+      Now that you are ready to start developing your application you should look more into <a href="http://backbonejs.org/">Backbone.</a> It gives your code structure that you need. While we are using Hapi to render views and handle routes, Backbone is also able to do all of that. In this stack I am primarily using it for the models. It gives you the opportunity to create objects(models) that can be updated and manipulated. You are able to set and retrieve data based on user interaction.
+    </p>
+    <p id="time"></p>
+  </div>
+</div>
+
+<script>
+  $("button").on("click", function(){
+    $("#time").html("Here is your current time:" + "<br>" + Date());
+    $(".center-two").show("slow");
+  });
+</script>

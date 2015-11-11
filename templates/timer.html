@@ -1,0 +1,46 @@
+<div data-job="{{name}}" class="mdl-card mdl-shadow--2dp">
+  <p>Job Name: {{name}}</p>
+  <p>Due Date: {{dueDate}}</p>
+  <p>Step: {{step}}</p>
+
+</div>
+
+<div class="mdl-card mdl-shadow--2dp">
+  <div class="demo-navigation mdl-navigation mdl-color--blue-grey-400 tBtn mdl-js-button mdl-js-ripple-effect">Start</div>
+  <div class="time">0</div>
+</div>
+
+<script>
+var interval;
+var state = 0;
+
+
+$(".tBtn").click(function(){
+  var $this = $(this);
+  if(state == 0)
+  {
+    jobStart();
+  } else {
+    jobStop();
+  }
+});
+
+
+
+var jobStart = function(){
+  interval = setInterval(function(){
+    var timer = $(".time").html() * 1;
+    timer++;
+    $(".time").html(timer);
+  }, 1000)
+  state = 1;
+  $(".tBtn").html("Stop")
+};
+
+var jobStop = function(){
+  clearInterval(interval);
+  state = 0;
+  $(".tBtn").html("Start");
+}
+
+</script>
