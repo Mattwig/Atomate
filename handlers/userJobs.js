@@ -14,13 +14,18 @@ module.exports = function(req, reply){
     //load steps the user can perform on jobs based on title
     userModel.loadStep(User.title, function(err, Step){
 
-      //load jobs user can work on based on title
-      woModel.loadJobs(Step.step, function(err, jobs){
+      //load users to populate drop down
+      userModel.loadUsers(function(err, users){
 
-        reply.view("orders", {
+      //load jobs user can work on based on title
+        woModel.loadJobs(Step.step, function(err, jobs){
+
+          reply.view("clickableOrders", {
+          users: users,
           name: User.name,
           title: User.title,
           jobs: jobs
+          });
         });
       });
     });

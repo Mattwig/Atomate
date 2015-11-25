@@ -31,12 +31,16 @@ module.exports = [
     path: '/wo',
     handler: function(req, reply){
       var model = new wo();
+      var userModel = new user();
       model.loadAllJobs(function(err, jobs){
+        userModel.loadUsers(function(err, users){
         reply.view("orders", {
-          jobs: jobs
+          jobs: jobs,
+          users: users
         });
       });
-    }
+    });
+  }
   }, {
       //loads jobs for a specific user
     method: 'GET',

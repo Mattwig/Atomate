@@ -1,0 +1,13 @@
+
+  {{#jobs}}
+    {{>job}}
+  {{/jobs}}
+
+
+  <script>
+    $(".job").click(function(){
+      var $this = $(this);
+      var value = $this.attr('data-job')
+      window.location.href =  '/wo/{{name}}/' + value;
+    })
+  </script>
