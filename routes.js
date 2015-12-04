@@ -20,6 +20,7 @@ module.exports = [
       var userModel = new user();
       userModel.loadUsers(function(err, users){
         reply.view("static", {
+          name: "Select a user..",
           users: users
         });
       });
@@ -35,6 +36,7 @@ module.exports = [
       model.loadAllJobs(function(err, jobs){
         userModel.loadUsers(function(err, users){
         reply.view("orders", {
+          name: "Select a user..",
           jobs: jobs,
           users: users
         });

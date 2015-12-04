@@ -1,0 +1,10 @@
+branch-defaults:
+  master:
+    environment: Atomate
+global:
+  application_name: Atomate
+  default_ec2_keyname: mattwig
+  default_platform: Node.js
+  default_region: us-west-2
+  profile: eb-cli
+  sc: git

@@ -29,7 +29,7 @@ module.exports = function(grunt){
         files:"**/*.html"
       },
       js:{
-        files:"**/*.js"
+        files:["**/*.js", "!**/node_modules/**"]
       },
       less:{
         files:"**/*.less",
