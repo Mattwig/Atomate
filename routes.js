@@ -62,3 +62,10 @@ module.exports = [
     }
   }
 ]
+
+// {
+//    //loads Specific job that is clicked on by a user
+//  method: 'POST',
+//  path: '/wo/{name}/{job}',
+//  handler: require('./handlers/saveJob')
+// },

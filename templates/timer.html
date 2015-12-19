@@ -10,12 +10,19 @@
   <div class="time">0</div>
   <button class="mdl-button mdl-js-button mdl-button--raised tBtn">
     Start
-  </button>  
+  </button>
 </div>
+
+<form method="POST">
+  <input class="hidden" name="time">
+  <input class="mdl-button mdl-js-button mdl-button--raised" type="submit" value="Save Time">
+</form>
+
 
 <script>
 var interval;
 var state = 0;
+var datetime = 0;
 
 
 $(".tBtn").click(function(){
@@ -28,9 +35,9 @@ $(".tBtn").click(function(){
   }
 });
 
-
-
 var jobStart = function(){
+  // check to see if the timer has already been started, if not, create a timestamp
+  if(($(".time").html() * 1) == 0)datetime = Date.now();
   interval = setInterval(function(){
     var timer = $(".time").html() * 1;
     timer++;
